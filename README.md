@@ -8,12 +8,14 @@ A comprehensive TypeScript library for managing Billboard and Last.FM charts wit
 ## ✨ Features
 
 - 🎯 **Billboard Integration**: Access all Billboard charts (Hot 100, Billboard 200, etc.)
+- 🌐 **Last.FM Integration**: Global music charts and personal listening data
 - 📈 **Trend Analysis**: Compare charts across time periods and track movement
 - 💾 **Smart Caching**: Built-in caching with localStorage persistence
 - 🔍 **Search & Filter**: Find tracks and artists across multiple charts
 - 📊 **Data Normalization**: Unified data format across different sources
 - 🚀 **TypeScript Support**: Full type safety and IntelliSense
 - ⚡ **Performance Optimized**: Efficient data fetching and caching strategies
+- 👤 **Personal Charts**: Access your own Last.FM listening history
 
 ## 🚀 Quick Start
 
@@ -50,7 +52,10 @@ console.log('Top album:', albums.entries[0]);
 // Get trends analysis
 const trends = await brickCharts.getTrends('hot-100');
 console.log('Biggest climbers:', trends.topMovers.climbers.slice(0, 5));
-```
+
+// Get Last.FM global charts
+const lastfmTracks = await brickCharts.getChart('top-tracks', ChartSource.LASTFM);
+console.log('Last.FM #1 track:', lastfmTracks.entries[0]);
 
 ## 📖 API Reference
 
@@ -67,6 +72,10 @@ const brickCharts = new BrickCharts(config?: BrickChartsConfig);
 - `defaultSource?: ChartSource` - Default chart source (default: BILLBOARD)
 - `cacheOptions?: CacheOptions` - Cache configuration
 - `apiKeys?: { lastfm?: string }` - API keys for external services
+
+**Chart Sources:**
+- `ChartSource.BILLBOARD` - Billboard commercial charts
+- `ChartSource.LASTFM` - Last.FM global and personal charts
 
 #### Methods
 
@@ -166,6 +175,20 @@ interface ChartData {
 - `latin-songs` - Latin Songs
 - And many more...
 
+### Last.FM Charts
+- `top-tracks` - Global top tracks
+- `top-albums` - Global top albums
+- `top-artists` - Global top artists
+- `top-tracks-weekly` - Weekly top tracks
+- `top-tracks-monthly` - Monthly top tracks
+- `top-tracks-yearly` - Yearly top tracks
+- `top-albums-weekly` - Weekly top albums
+- `top-albums-monthly` - Monthly top albums
+- `top-albums-yearly` - Yearly top albums
+- `top-artists-weekly` - Weekly top artists
+- `top-artists-monthly` - Monthly top artists
+- `top-artists-yearly` - Yearly top artists
+
 ## 🛠️ Advanced Usage
 
 ### Caching Configuration
@@ -184,6 +207,23 @@ await brickCharts.clearCache();
 
 // Get cache stats
 const stats = await brickCharts.getCacheStats();
+```
+
+### Last.FM Integration
+
+```typescript
+// Initialize with Last.FM API key
+const brickCharts = new BrickCharts({
+  apiKeys: {
+    lastfm: 'your-lastfm-api-key'
+  }
+});
+
+// Get global Last.FM charts
+const globalTracks = await brickCharts.getChart('top-tracks', ChartSource.LASTFM);
+
+// Get personal charts (requires username)
+const personalTracks = await getPersonalTopTracks(apiKey, 'username', 10);
 ```
 
 ### Error Handling
@@ -225,7 +265,18 @@ npm run test:interactive
 # 4. Run the comprehensive demo
 npm run demo
 
-# 5. Build the library
+# 5. Test Last.FM integration (requires API key)
+export LASTFM_API_KEY="your-api-key"
+npm run demo:lastfm
+
+# 6. Test combined Billboard + Last.FM
+npm run demo:combined
+
+# 7. Test personal Last.FM charts
+export LASTFM_USERNAME="your-username"
+npm run demo:personal-lastfm
+
+# 8. Build the library
 npm run build
 ```
 
@@ -259,6 +310,36 @@ npm run demo
 - 📈 Week-over-week comparisons
 - 💾 Cache performance metrics
 - 🔍 Search functionality demo
+
+#### **Last.FM Demo** (Global Charts)
+```bash
+npm run demo:lastfm
+```
+**What you'll see:**
+- ✅ Last.FM global top tracks, albums, artists
+- 📊 Time-period specific charts (weekly, monthly, yearly)
+- 🎧 Play count and listener statistics
+- 💾 Unified caching with Billboard
+
+#### **Combined Demo** (Cross-Platform Analysis)
+```bash
+npm run demo:combined
+```
+**What you'll see:**
+- ✅ Billboard vs Last.FM chart comparisons
+- 🎯 Tracks popular on both platforms
+- 📊 Genre-specific analysis
+- 📈 Time-based trend analysis
+
+#### **Personal Last.FM Demo** (Individual Data)
+```bash
+npm run demo:personal-lastfm
+```
+**What you'll see:**
+- ✅ Personal top tracks, artists, albums
+- 📅 Recent listening activity
+- 📊 Time-period analysis (weekly, monthly, yearly)
+- ❤️ Loved tracks collection
 
 #### **Unit Tests** (Developer Validation)
 ```bash
@@ -393,12 +474,14 @@ console.log('Services:', Object.fromEntries(health));
 
 ### ✅ **Completed Features**
 - [x] **Billboard Integration** - Full access to 255+ Billboard charts
+- [x] **Last.FM Integration** - Global charts and personal listening data
 - [x] **Advanced Search Engine** - Fuzzy matching, filtering, autocomplete
 - [x] **Export Functions** - CSV, JSON, SVG exports with validation
 - [x] **React Components** - TypeScript chart visualization components
 - [x] **Performance Optimization** - Smart caching with localStorage
 - [x] **Comprehensive Testing** - Unit tests + interactive testing suite
 - [x] **Type Safety** - Full TypeScript support with strict typing
+- [x] **Cross-Platform Analysis** - Billboard vs Last.FM comparisons
 
 ### 🚧 **In Progress**
 - [ ] **Additional React Components** - Bar, Bubble, Heatmap, Timeline charts
@@ -407,19 +490,39 @@ console.log('Services:', Object.fromEntries(health));
 - [ ] **PDF Export** - Complete report generation
 
 ### 🔮 **Future Enhancements**
-- [ ] **Last.FM Integration** - Access Last.FM charts and user data
 - [ ] **Spotify Integration** - Connect with Spotify API for streaming data
 - [ ] **Real-time Updates** - WebSocket support for live chart updates
 - [ ] **Genre Analysis** - Advanced genre and mood analysis
 - [ ] **Playlist Generation** - Auto-generate playlists from chart data
 - [ ] **Apple Music Charts** - Additional chart source integration
 - [ ] **Chart Predictions** - ML-based trend forecasting
+- [ ] **Advanced Personal Analytics** - Deep listening pattern analysis
 
 ### 💡 **Community Requested**
-- [ ] **Storybook Integration** - Component documentation and playground
-- [ ] **Vue.js Components** - Vue equivalents of React components
 - [ ] **Mobile Optimization** - React Native compatible components
 - [ ] **Chart Animations** - Smooth transitions and loading states
+
+## 🔑 API Keys
+
+### Last.FM API Key
+To use Last.FM features, you'll need a free API key:
+
+1. Visit [Last.FM API Registration](https://www.last.fm/api/account/create)
+2. Create a free account or log in
+3. Create a new application
+4. Copy your API key
+
+```bash
+# Set environment variable
+export LASTFM_API_KEY="your-api-key-here"
+
+# Or use in code
+const brickCharts = new BrickCharts({
+  apiKeys: {
+    lastfm: 'your-api-key-here'
+  }
+});
+```
 
 ## 🤝 Contributing
 
@@ -446,7 +549,6 @@ Brickstone Studios LLC
 
 - [billboard-top-100](https://github.com/darthbatman/billboard-top-100) for Billboard API access
 - Billboard.com for providing music chart data
-- The music industry for creating amazing content to chart
 
 ## 📞 Support
 
