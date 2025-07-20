@@ -1,7 +1,7 @@
 /**
  * BrickCharts - Billboard and Last.FM Charts Library
  * 
- * Copyright (c) 2024 Brickstone Studios LLC
+ * Copyright (c) 2025 Brickstone Studios LLC
  * Author: Ari Daniel Bradshaw
  * 
  * Licensed under the MIT License
