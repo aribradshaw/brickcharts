@@ -4,6 +4,7 @@ A comprehensive TypeScript library for managing Billboard and Last.FM charts wit
 
 [![npm version](https://badge.fury.io/js/brickcharts.svg)](https://badge.fury.io/js/brickcharts)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub release](https://img.shields.io/github/v/release/aribradshaw/brickcharts.svg)](https://github.com/aribradshaw/brickcharts/releases)
 
 ## ✨ Features
 
