@@ -157,7 +157,7 @@ async function runDemo() {
     if (error.message?.includes('getaddrinfo ENOTFOUND')) {
       console.log('\n💡 Tip: This error suggests no internet connection or Billboard API is unavailable.');
     } else if (error.message?.includes('billboard-top-100')) {
-      console.log('\n💡 Tip: Make sure the billboard-top-100 package is properly installed.');
+  console.log('\n💡 Tip: Make sure the @aribradshaw/billboard-top-100 package is properly installed.');
     }
   }
 }

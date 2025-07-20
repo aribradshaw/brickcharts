@@ -1,15 +1,14 @@
 import axios, { AxiosResponse } from 'axios';
-import { 
-  ChartClient, 
-  ChartData, 
+import {
+  ChartClient,
+  ChartData,
   ChartEntry,
-  ChartSource, 
-  FetchOptions, 
-  DateRange, 
+  ChartSource,
+  FetchOptions,
+  DateRange,
   HistoricalChartData,
   APIError,
-  LastFMTrack,
-  LastFMChart
+  LastFMTrack
 } from '../types';
 
 export interface LastFMAlbum {

@@ -1,6 +1,6 @@
 {
   "name": "brickcharts",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A comprehensive library for managing Billboard and Last.FM charts with visualizations and data management",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -23,33 +23,40 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "keywords": ["billboard", "lastfm", "charts", "music", "visualization", "data"],
+  "keywords": [
+    "billboard",
+    "lastfm",
+    "charts",
+    "music",
+    "visualization",
+    "data"
+  ],
   "author": {
     "name": "Ari Daniel Bradshaw",
     "company": "Brickstone Studios LLC"
   },
   "license": "MIT",
   "dependencies": {
-    "billboard-top-100": "^2.3.3",
+    "@aribradshaw/billboard-top-100": "^3.0.4",
     "axios": "^1.6.2",
-    "date-fns": "^2.30.0",
-    "zod": "^3.22.4",
     "chart.js": "^4.4.1",
-    "react-chartjs-2": "^5.2.0",
     "chartjs-adapter-date-fns": "^3.0.0",
+    "date-fns": "^2.30.0",
     "html2canvas": "^1.4.1",
-    "papaparse": "^5.4.1"
+    "papaparse": "^5.4.1",
+    "react-chartjs-2": "^5.2.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.6",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "^14.5.1",
     "@types/node": "^20.10.4",
+    "@types/papaparse": "^5.3.14",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
-    "@types/papaparse": "^5.3.14",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
-    "@testing-library/react": "^14.1.2",
-    "@testing-library/jest-dom": "^6.1.6",
-    "@testing-library/user-event": "^14.5.1",
     "eslint": "^8.55.0",
     "jsdom": "^23.0.1",
     "prettier": "^3.1.1",
@@ -83,4 +90,4 @@
     "url": "https://github.com/aribradshaw/brickcharts/issues"
   },
   "homepage": "https://github.com/aribradshaw/brickcharts#readme"
-} 
+}

@@ -1,4 +1,4 @@
-const { getChart, listCharts } = require('billboard-top-100');
+const { getChart, listCharts } = require('@aribradshaw/billboard-top-100');
 import { 
   ChartClient, 
   ChartData, 

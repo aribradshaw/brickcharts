@@ -8,7 +8,7 @@ A comprehensive TypeScript library for managing Billboard and Last.FM charts wit
 
 ## ✨ Features
 
-- 🎯 **Billboard Integration**: Access all Billboard charts (Hot 100, Billboard 200, etc.)
+- 🎯 **Billboard Integration**: Complete access to 255+ Billboard charts via `@aribradshaw/billboard-top-100`
 - 🌐 **Last.FM Integration**: Global music charts and personal listening data
 - 📈 **Trend Analysis**: Compare charts across time periods and track movement
 - 💾 **Smart Caching**: Built-in caching with localStorage persistence
@@ -17,6 +17,7 @@ A comprehensive TypeScript library for managing Billboard and Last.FM charts wit
 - 🚀 **TypeScript Support**: Full type safety and IntelliSense
 - ⚡ **Performance Optimized**: Efficient data fetching and caching strategies
 - 👤 **Personal Charts**: Access your own Last.FM listening history
+- 🧪 **Comprehensive Testing**: 10+ test suites covering all functionality
 
 ## 🚀 Quick Start
 
@@ -174,7 +175,11 @@ interface ChartData {
 - `rap-songs` - Rap Songs
 - `dance-songs` - Dance/Electronic Songs
 - `latin-songs` - Latin Songs
-- And many more...
+- `streaming-songs` - Streaming Songs
+- `radio-songs` - Radio Songs
+- `digital-songs` - Digital Songs
+- `social-50` - Social 50
+- And 240+ more charts...
 
 ### Last.FM Charts
 - `top-tracks` - Global top tracks
@@ -208,6 +213,28 @@ await brickCharts.clearCache();
 
 // Get cache stats
 const stats = await brickCharts.getCacheStats();
+```
+
+### Billboard Integration
+
+```typescript
+// Billboard integration is included by default
+const brickCharts = new BrickCharts();
+
+// Get current Hot 100
+const hot100 = await brickCharts.getChart('hot-100');
+
+// Get Billboard 200 albums
+const albums = await brickCharts.getChart('billboard-200');
+
+// Get historical data
+const historicalChart = await brickCharts.getChart('hot-100', ChartSource.BILLBOARD, {
+  date: new Date('2023-01-01')
+});
+
+// Get available charts
+const availableCharts = await brickCharts.getAvailableCharts(ChartSource.BILLBOARD);
+console.log('Available charts:', availableCharts.length); // 255+ charts
 ```
 
 ### Last.FM Integration
@@ -474,22 +501,23 @@ console.log('Services:', Object.fromEntries(health));
 ## 🗺️ Roadmap
 
 ### ✅ **Completed Features**
-- [x] **Billboard Integration** - Full access to 255+ Billboard charts
+- [x] **Billboard Integration** - Full access to 255+ Billboard charts via `@aribradshaw/billboard-top-100`
 - [x] **Last.FM Integration** - Global charts and personal listening data
 - [x] **Advanced Search Engine** - Fuzzy matching, filtering, autocomplete
 - [x] **Export Functions** - CSV, JSON, SVG exports with validation
 - [x] **React Components** - TypeScript chart visualization components
 - [x] **Performance Optimization** - Smart caching with localStorage
-- [x] **Comprehensive Testing** - Unit tests + interactive testing suite
+- [x] **Comprehensive Testing** - 10+ test suites covering all functionality
 - [x] **Type Safety** - Full TypeScript support with strict typing
 - [x] **Cross-Platform Analysis** - Billboard vs Last.FM comparisons
+- [x] **Stress Testing** - Robust error handling and performance validation
 
 ### 🚧 **In Progress**
 - [ ] **Additional React Components** - Bar, Bubble, Heatmap, Timeline charts
 - [ ] **Component Library** - Dashboard, TrendAnalyzer, ChartComparison
 - [ ] **Image Export** - PNG rendering with html2canvas
 - [ ] **PDF Export** - Complete report generation
-- [ ] **Fixing Dependency Depreciation Errors** - Currently, when installing from npm, we get errors because of included repos which are outdated. We are forking those repos to fix them
+- [ ] **Enhanced Billboard Features** - Historical data improvements and custom chart types
 
 ### 🔮 **Future Enhancements**
 - [ ] **Spotify Integration** - Connect with Spotify API for streaming data
@@ -549,8 +577,9 @@ Brickstone Studios LLC
 
 ## 🙏 Acknowledgments
 
-- [billboard-top-100](https://github.com/darthbatman/billboard-top-100) for Billboard API access
+- [@aribradshaw/billboard-top-100](https://github.com/aribradshaw/billboard-top-100) for Billboard API access
 - Billboard.com for providing music chart data
+- The Billboard Top 100 community for maintaining the original package
 
 ## 📞 Support
 

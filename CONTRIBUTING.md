@@ -113,18 +113,22 @@ docs/              # Documentation
 - **Documentation improvements**
 - **Additional export formats** (Excel, PDF)
 - **More React components** (Bar, Bubble, Heatmap)
+- **Billboard chart type additions** - New chart categories
 
 ### 🚀 New Features
-- **Last.FM integration** - Complete the placeholder client
 - **Additional chart sources** - Spotify, Apple Music, etc.
 - **Real-time updates** - WebSocket support
 - **Mobile components** - React Native equivalents
+- **Enhanced Billboard integration** - Historical data improvements
+- **Performance optimizations** - Faster chart fetching and caching
 
 ### 🧪 Advanced
 - **Performance optimizations**
 - **Machine learning** - Trend prediction
 - **Chart animations** - Smooth transitions
 - **Offline support** - Service worker integration
+- **Billboard API enhancements** - Custom chart types and data processing
+- **Advanced caching strategies** - Multi-level caching and prefetching
 
 ## 📋 Commit Guidelines
 
