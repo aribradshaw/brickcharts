@@ -489,6 +489,7 @@ console.log('Services:', Object.fromEntries(health));
 - [ ] **Component Library** - Dashboard, TrendAnalyzer, ChartComparison
 - [ ] **Image Export** - PNG rendering with html2canvas
 - [ ] **PDF Export** - Complete report generation
+- [ ] **Fixing Dependency Depreciation Errors** - Currently, when installing from npm, we get errors because of included repos which are outdated. We are forking those repos to fix them.
 
 ### 🔮 **Future Enhancements**
 - [ ] **Spotify Integration** - Connect with Spotify API for streaming data
@@ -554,7 +555,3 @@ Brickstone Studios LLC
 ## 📞 Support
 
 If you have any questions or run into issues, please open an issue on GitHub.
-
----
-
-**Made with ❤️ for music data enthusiasts** 
