@@ -435,12 +435,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Copyright (c) 2024 Brickstone Studios LLC
+Copyright (c) 2025 Brickstone Studios LLC
 
 ## 👨‍💻 Author
 
-**Ari Daniel Bradshaw**  
-*Lead Developer*  
+**Ari Daniel Bradshaw**   
 Brickstone Studios LLC
 
 ## 🙏 Acknowledgments
