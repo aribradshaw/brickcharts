@@ -1,3 +1,5 @@
+![brickchartsgithub](https://github.com/user-attachments/assets/6e9c4647-e107-4be0-bfdc-e9a24a0f5706)
+
 # 🎵 BrickCharts
 
 A comprehensive TypeScript library for managing Billboard and Last.FM charts with powerful data management, visualization support, and easy-to-use APIs.
